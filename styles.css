@@ -17,9 +17,8 @@ body {
     display: inline-block;
     font-size: 2rem;
     color: #333;
-    transition: color 0.3s ease;
-}
-
-.word:hover {
-    color: red; /* Simple transition effect */
+    -webkit-filter: blur(5px); /* For Safari */
+    filter: blur(5px);
+    transition: -webkit-filter 0.3s ease; /* For Safari */
+    transition: filter 0.3s ease;
 }
