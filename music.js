@@ -1,13 +1,29 @@
 const audio = document.getElementById('background-music');
-        const image = document.getElementById('unmute-image');
 
-        // Toggle mute/unmute and change image
-        image.addEventListener('click', function() {
-            if (audio.muted) {
-                audio.muted = false;
-                image.src = 'mute.png'; // Change to mute icon
-            } else {
-                audio.muted = true;
-                image.src = 'unmute.png'; // Change to unmute icon
-            }
-        });
+
+const unmuteImage = document.getElementById('unmute-image');
+const muteImage = document.getElementById('mute-image');
+
+function updateIconVisibility() {
+    if (audio.muted) {
+        unmuteImage.style.display = 'block';
+        muteImage.style.display = 'none';
+    } else {
+        unmuteImage.style.display = 'none';
+        muteImage.style.display = 'block';
+    }
+}
+
+// Initial icon visibility
+updateIconVisibility();
+
+// Toggle mute/unmute and icon visibility on click
+unmuteImage.addEventListener('click', function() {
+    audio.muted = false;
+    updateIconVisibility();
+});
+
+muteImage.addEventListener('click', function() {
+    audio.muted = true;
+    updateIconVisibility();
+});

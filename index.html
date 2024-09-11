@@ -3,43 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I want to hide</title>
-    <link rel="stylesheet" href="styles.css">
-    
+    <title>Loading...</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Handjet:wght@100..900&display=swap" rel="stylesheet">
 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ff89ca;
 
+            font-family: "Handjet", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 13vw;
+            color: #000000;
+            overflow: hidden; /* Prevent scrollbars */
+        }
 
+        .touch {
+            filter: blur(2vw); /* Initial blur */
+            transition: filter 2s ease; /* Smooth transition for blur effect */
+            cursor: pointer;
+        }
+
+        .touch.unblur {
+            filter: blur(0); /* Remove blur */
+        }
+    </style>
 </head>
 <body>
 
+    <div class="touch" id="touch">touch</div>
 
-    <div class="text-container">
-        I want to hide.
-        <p id="interactive-text">
-           </p>
-        all the shame in me...
-    </div>
+    <script>
+        const touchElement = document.getElementById('touch');
 
+        function toggleBlur(event) {
+            touchElement.classList.toggle('unblur');
+        }
 
-    <audio id="background-music" autoplay loop muted>
-        <source src="music_baby.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <img id="unmute-image" src="unmute.png" alt="Unmute">
-    <img id="mute-image" src="mute.png" alt="mute">
+        // Handle hover and touch interactions
+        touchElement.addEventListener('mouseover', toggleBlur);
+        touchElement.addEventListener('mouseout', toggleBlur);
+        touchElement.addEventListener('touchstart', toggleBlur);
+        touchElement.addEventListener('touchend', toggleBlur);
+    </script>
 
-
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
-
-    <script src="music.js"></script>
-    <canvas id="background-canvas"></canvas>
-     <script src="animation.js"></script>
 </body>
 </html>
