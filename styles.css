@@ -17,7 +17,9 @@ body {
 
 
 .text-container {
-    
+    max-width: 100%; /* Ensure the container does not exceed the screen width */
+    padding: 1rem; /* Add some padding for better readability */
+    box-sizing: border-box; 
     position: relative;
 }
 
@@ -37,4 +39,17 @@ body {
     
     filter: blur(0px);
     transition: filter 0.3s ease;
+}
+
+
+#interactive-text {
+    display: block;
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    overflow-wrap: break-word;
+    -webkit-user-drag: none; /* Prevents dragging on WebKit-based browsers like Safari */
+    -webkit-user-select: none; /* Prevents text selection on WebKit-based browsers like Safari */
+    -moz-user-select: none; /* Prevents text selection on Firefox */
+    -ms-user-select: none; /* Prevents text selection on Internet Explorer/Edge */
+    user-select: none; /* Standard syntax for preventing text selection */
+    line-height: 1.5;
 }

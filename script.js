@@ -21,7 +21,7 @@ $(document).ready(function() {
       "To hold your secrets close,",
       "All the shame in me"
   ];
-  textElement.innerHTML = sentences.join('                  '); // Adds line breaks between sentences
+  textElement.innerHTML = sentences.join('<br>'); // Adds line breaks between sentences
 
   // Apply text wrapping and touch event handling
   splitTextIntoWords();
@@ -33,6 +33,16 @@ $(document).ready(function() {
       $(this).css('filter', 'blur(5px)');
   });
 
+  // Prevent default touch actions
+  $('#interactive-text').on('touchstart touchmove', function(event) {
+      event.preventDefault();
+  });
+
+  // Prevent dragging of images or other elements if needed
+  $('img').on('dragstart', function(event) {
+      event.preventDefault();
+  });
+
   // Compatibility notice for Mobile Safari
   function isMobileSafari() {
       return /iP(hone|od|ad)/.test(navigator.userAgent) && !window.MSStream && /AppleWebKit/.test(navigator.userAgent);
@@ -42,5 +52,3 @@ $(document).ready(function() {
       $('#compatibility-notice').show();
   }
 });
-
-
