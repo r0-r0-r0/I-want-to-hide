@@ -6,14 +6,16 @@ body {
     font-family: "bodoni-moda-variable", sans-serif;
     font-variation-settings: "opsz" 11, "wght" 300;
     font-style: italic;
-    font-size: 7vw;
+    font-size: 10vw;
     color: #514747;
+    line-height: 11vw;
 
     display: block;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 2vw;
+    margin: 3vw;
+    margin-top: 5vw;
     background-color: #f08383;
 
 }
@@ -32,8 +34,8 @@ body {
     white-space: 3vh;
     -webkit-filter: blur(2vw); /* For Safari */
     filter: blur(2vw);
-    transition: -webkit-filter 10s ease; /* For Safari */
-    transition: filter 10s ease;
+    transition: -webkit-filter 12s ease; /* For Safari */
+    transition: filter 12s ease;
 
     
 }
