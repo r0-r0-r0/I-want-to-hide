@@ -25,14 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const x = touch.clientX - rect.left;
         const y = touch.clientY - rect.top;
 
-        // Clear a portion of the blur effect where the touch occurred
+        console.log(`Touch at (${x}, ${y})`); // Debug log
+
         context.beginPath();
         context.arc(x, y, clearRadius, 0, Math.PI * 2);
         context.fill();
     }
 
     function handleTouchEnd() {
-        // Reset the canvas after touch ends
+        console.log('Touch end'); // Debug log
         context.clearRect(0, 0, canvas.width, canvas.height);
     }
 
