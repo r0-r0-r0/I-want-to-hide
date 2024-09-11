@@ -1,6 +1,5 @@
 // script.js
 $(document).ready(function() {
-  // Function to split text into words and wrap each in a span
   function splitTextIntoWords() {
       const $textElement = $('#interactive-text');
       const text = $textElement.text();
@@ -10,6 +9,12 @@ $(document).ready(function() {
       $textElement.html(wrappedWords);
   }
 
-  // Call the function to apply the split effect
   splitTextIntoWords();
+
+  // Add touch event handling
+  $('.word').on('touchstart', function() {
+      $(this).css('filter', 'blur(0px)');
+  }).on('touchend', function() {
+      $(this).css('filter', 'blur(5px)');
+  });
 });
