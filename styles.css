@@ -1,13 +1,31 @@
 /* styles.css */
+#background-canvas {
+    position:fixed;
+        top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the canvas is behind other content */
+    display: block; /* Remove any extra spacing below the canvas */
+}
+
+/* Styling for main content */
+.content {
+    position:fixed;
+    z-index: 1; /* Ensure content is above the canvas */
+}
+
 
 
 body {
 
-    font-family: "bodoni-moda-variable", sans-serif;
-    font-variation-settings: "opsz" 11, "wght" 300;
-    font-style: italic;
+    font-family: "Handjet", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+
     font-size: 10vw;
-    color: #514747;
+    color: #000000;
     line-height: 11vw;
 
     display: block;
@@ -16,7 +34,7 @@ body {
     height: 100vh;
     margin: 3vw;
     margin-top: 5vw;
-    background-color: #f08383;
+    background-color: #ffffff;
 
 }
 
@@ -32,8 +50,8 @@ body {
 
 .word {
     white-space: 3vh;
-    -webkit-filter: blur(2vw); /* For Safari */
-    filter: blur(2vw);
+    -webkit-filter: blur(1.6vw); /* For Safari */
+    filter: blur(1.6vw);
     transition: -webkit-filter 12s ease; /* For Safari */
     transition: filter 12s ease;
 
