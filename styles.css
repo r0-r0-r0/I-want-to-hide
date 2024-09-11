@@ -25,9 +25,9 @@ body {
     font-weight: 700;
     font-style: normal;
 
-    font-size: 10vw;
+    font-size: 13vw;
     color: #000000;
-    line-height: 17vw;
+    line-height: 14vw;
 
     display: block;
     justify-content: center;
@@ -36,7 +36,6 @@ body {
     margin: 3vw;
     margin-top: 5vw;
     background-color: #ffffff;
-
     overflow: hidden;
 
 }
@@ -51,7 +50,6 @@ body {
 }
 
 .word {
-    white-space: 3vh;
     -webkit-filter: blur(1.6vw); /* For Safari */
     filter: blur(1.6vw);
     transition: -webkit-filter 12s ease; /* For Safari */
@@ -62,21 +60,6 @@ body {
     filter: blur(0px);
     transition: -webkit-filter 0.5s ease; /* For Safari */
     transition: filter 0.5s ease;
-    
-}
-
-
-
-#interactive-text-2 {
-    filter: blur(1.6vw);
-    transition: -webkit-filter 12s ease; /* For Safari */
-    transition: filter 12s ease;
-}
-
-#interactive-text-2:hover {
-    filter: blur(0px);
-    transition: -webkit-filter 1s ease; /* For Safari */
-    transition: filter 1s ease;
     
 }
 

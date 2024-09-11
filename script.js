@@ -17,7 +17,8 @@ $(document).ready(function() {
       "Afraid of your disappointment.",
       "I struggle to breathe.",
       "I struggle to be.",
-      "I long for love."
+      "I long for love.",
+      "To hold your secrets close"
   ];
   textElement.innerHTML = sentences.join("  "); // Adds line breaks between sentences
 
