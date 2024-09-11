@@ -1,28 +1,40 @@
 /* styles.css */
+
+
 body {
-    font-family: Arial, sans-serif;
+
+    font-family: "bodoni-moda-variable", sans-serif;
+    font-variation-settings: "opsz" 11, "wght" 300;
+    font-style: italic;
+   
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    margin: 3vw;
     background-color: #f0f0f0;
 }
 
+
 .text-container {
+    
     position: relative;
 }
 
 .word {
-    display: inline-block;
-    font-size: 2rem;
+    white-space: 3vh;
+    font-size: 5rem;
     color: #333;
     -webkit-filter: blur(5px); /* For Safari */
     filter: blur(5px);
-    transition: -webkit-filter 0.3s ease; /* For Safari */
-    transition: filter 0.3s ease;
+    transition: -webkit-filter 1s ease; /* For Safari */
+    transition: filter 3s ease;
+
+    
 }
 
 .word:hover {
+    
     filter: blur(0px);
+    transition: filter 0.3s ease;
 }
