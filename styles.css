@@ -29,5 +29,5 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    pointer-events: none; /* Ensures the canvas does not interfere with touch/mouse events */
+    pointer-events: none;
 }

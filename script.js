@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const textElement = document.getElementById('blurred-text');
     const canvas = document.getElementById('overlay-canvas');
     const context = canvas.getContext('2d');
-    const clearRadius = 20; // Radius of the touch/mouse effect
 
     function resizeCanvas() {
         const rect = textElement.getBoundingClientRect();
@@ -14,45 +13,33 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.style.top = `${rect.top}px`;
     }
 
-    function handleTouchMove(event) {
-        event.preventDefault();
+    function handleInteraction(event) {
+        event.preventDefault(); // Prevent default actions
         const rect = canvas.getBoundingClientRect();
-        const touch = event.touches ? event.touches[0] : event;
-        const x = touch.clientX - rect.left;
-        const y = touch.clientY - rect.top;
+        let x, y;
 
-        context.globalCompositeOperation = 'destination-out';
-        context.beginPath();
-        context.arc(x, y, clearRadius, 0, Math.PI * 2);
-        context.fill();
+        if (event.touches) {
+            // For touch events
+            const touch = event.touches[0];
+            x = touch.clientX - rect.left;
+            y = touch.clientY - rect.top;
+        } else {
+            // For mouse events
+            x = event.clientX - rect.left;
+            y = event.clientY - rect.top;
+        }
+
+        // Calculate if the interaction is within the text area
+        const textRect = textElement.getBoundingClientRect();
+        if (x >= 0 && x <= textRect.width && y >= 0 && y <= textRect.height) {
+            textElement.style.filter = 'none'; // Remove the blur filter
+        }
     }
 
-    function handleTouchEnd() {
-        // Optional: You can clear the canvas if you want to reset the effect
-    }
-
-    function handleMouseMove(event) {
-        const rect = canvas.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-
-        context.globalCompositeOperation = 'destination-out';
-        context.beginPath();
-        context.arc(x, y, clearRadius, 0, Math.PI * 2);
-        context.fill();
-    }
-
-    function handleMouseUp() {
-        // Optional: You can clear the canvas if you want to reset the effect
-    }
-
-    // Initialize canvas size and attach event listeners
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Add touch and mouse event listeners
-    canvas.addEventListener('touchmove', handleTouchMove);
-    canvas.addEventListener('touchend', handleTouchEnd);
-    canvas.addEventListener('mousemove', handleMouseMove);
-    canvas.addEventListener('mouseup', handleMouseUp);
+    // Attach event listeners for touch and mouse interactions
+    canvas.addEventListener('touchstart', handleInteraction);
+    canvas.addEventListener('mousedown', handleInteraction);
 });
