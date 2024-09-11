@@ -39,7 +39,7 @@ body {
     height: 100vh;
     margin: 3vw;
     margin-top: 5vw;
-    background-color: #f47ea5;
+    background-color: #ffffff;
     overflow:hidden;
 
     animation: fadeIn 2s forwards;
@@ -113,15 +113,18 @@ body {
     background-color: #f47ea5;
     z-index: 10; /* Make sure it sits on top of other content */
     opacity: 1; /* Start fully opaque */
-    animation: fadeOut 5s forwards; /* Adjust duration as needed */
+    animation: fadeOut 3s forwards; /* Total duration is 7s: 2s pause + 5s fade-out */
 }
 
 @keyframes fadeOut {
-    from {
+    0% {
         opacity: 1;
     }
-    to {
-        opacity: 0;
+    40% {
+        opacity: 1; /* Stay visible for 2 seconds (2s / 7s = 28.6%) */
+    }
+    100% {
+        opacity: 0; /* Fade out */
     }
 }
 
