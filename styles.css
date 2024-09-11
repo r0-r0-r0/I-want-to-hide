@@ -25,9 +25,9 @@ body {
     font-weight: 700;
     font-style: normal;
 
-    font-size: 13vw;
+    font-size: 10vw;
     color: #000000;
-    line-height: 14vw;
+    line-height: 17vw;
 
     display: block;
     justify-content: center;
@@ -47,7 +47,6 @@ body {
     box-sizing: border-box; 
     position: relative;
     white-space: inherit;
-    padding-inline-end: 3vw;
     overflow-wrap: break-word;
 }
 
@@ -57,15 +56,27 @@ body {
     filter: blur(1.6vw);
     transition: -webkit-filter 12s ease; /* For Safari */
     transition: filter 12s ease;
-
-    
 }
 
 .word:hover {
-    
     filter: blur(0px);
     transition: -webkit-filter 0.5s ease; /* For Safari */
     transition: filter 0.5s ease;
+    
+}
+
+
+
+#interactive-text-2 {
+    filter: blur(1.6vw);
+    transition: -webkit-filter 12s ease; /* For Safari */
+    transition: filter 12s ease;
+}
+
+#interactive-text-2:hover {
+    filter: blur(0px);
+    transition: -webkit-filter 1s ease; /* For Safari */
+    transition: filter 1s ease;
     
 }
 

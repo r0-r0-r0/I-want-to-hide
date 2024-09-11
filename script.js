@@ -12,15 +12,14 @@ $(document).ready(function() {
   const textElement = document.getElementById('interactive-text');
   const sentences = [
      
-      "I fear being alone.",
-      "Terrified that you’ll see.",
+      "I fear being alone.", 
+      "Terrified that you’ll see.", 
       "Afraid of your disappointment.",
       "I struggle to breathe.",
       "I struggle to be.",
-      "I long for love.",
-      "To hold your secrets close,"
+      "I long for love."
   ];
-  textElement.innerHTML = sentences.join('                 '); // Adds line breaks between sentences
+  textElement.innerHTML = sentences.join("  "); // Adds line breaks between sentences
 
   // Apply text wrapping and touch event handling
   splitTextIntoWords();
