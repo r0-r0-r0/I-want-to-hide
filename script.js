@@ -63,7 +63,12 @@ window.addEventListener('load', function() {
 
 
 
-
+document.addEventListener('DOMContentLoaded', function() {
+  var fakepink = document.querySelector('.fakepink');
+  fakepink.addEventListener('animationend', function() {
+      fakepink.classList.add('remove');
+  });
+});
 
 
 

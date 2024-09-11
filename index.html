@@ -30,7 +30,7 @@
 
         .touch {
             transform: translateY(-2vh);
-            animation: blurAnimation 3s infinite; /* Blur animation */
+            animation: blurAnimation 6s infinite; /* Blur animation */
             filter: blur(2vw); /* Initial blur */
             transition: filter 0.3s ease, opacity 0.5s ease, color 0.5s ease; /* Smooth transition for blur, fade-out, and color */
             cursor: pointer;
@@ -40,7 +40,7 @@
             0% {
                 filter: blur(0.1vw);
             }
-            50% {
+            80% {
                 filter: blur(3vw); /* Max blur amount */
             }
             100% {
