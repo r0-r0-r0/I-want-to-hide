@@ -18,7 +18,7 @@ $(document).ready(function() {
       "I struggle to breathe.",
       "I struggle to be.",
       "I long for love.",
-      "To hold your secrets close"
+      "To hold your secrets close,"
   ];
   textElement.innerHTML = sentences.join("  "); // Adds line breaks between sentences
 
@@ -50,6 +50,15 @@ $(document).ready(function() {
   if (isMobileSafari()) {
       $('#compatibility-notice').show();
   }
+});
+
+
+
+window.addEventListener('load', function() {
+  const audio = document.querySelector('audio');
+  audio.play().catch(function(error) {
+      console.log('Autoplay was prevented:', error);
+  });
 });
 
 

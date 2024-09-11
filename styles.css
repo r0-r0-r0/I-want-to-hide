@@ -36,7 +36,7 @@ body {
     margin: 3vw;
     margin-top: 5vw;
     background-color: #ffffff;
-    overflow:auto;
+    overflow:hidden;
 
 }
 
@@ -70,4 +70,23 @@ body {
     -moz-user-select: none; /* Prevents text selection on Firefox */
     -ms-user-select: none; /* Prevents text selection on Internet Explorer/Edge */
     user-select: none; /* Standard syntax for preventing text selection */
+}
+
+
+#unmute-image {
+    position: absolute;
+    top: 5vw;
+    right: 5vw;
+    width: 5vw; /* Adjust the size of the image */
+    height: 5vw;
+    cursor: pointer;
+}
+
+#unmute-image {
+    position: absolute;
+    top: 5vw;
+    right: 5vw;
+    width: 5vw; /* Adjust the size of the image */
+    height: 5vw;
+    cursor: pointer;
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Unmute</title>
+    <style>
+        #unmute-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="background-music" autoplay loop muted>
+        <source src="music_baby.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="unmute-button">Click to Unmute</button>
+
+    <script>
+        const audio = document.getElementById('background-music');
+        const button = document.getElementById('unmute-button');
+
+        // Toggle mute/unmute and change button text
+        button.addEventListener('click', function() {
+            if (audio.muted) {
+                audio.muted = false;
+                button.textContent = 'Click to Mute';
+            } else {
+                audio.muted = true;
+                button.textContent = 'Click to Unmute';
+            }
+        });
+    </script>
+
+</body>
+</html>
