@@ -22,3 +22,7 @@ body {
     transition: -webkit-filter 0.3s ease; /* For Safari */
     transition: filter 0.3s ease;
 }
+
+.word:hover {
+    filter: blur(0px);
+}

@@ -18,3 +18,15 @@ $(document).ready(function() {
       $(this).css('filter', 'blur(5px)');
   });
 });
+
+
+
+function isMobileSafari() {
+  return /iP(hone|od|ad)/.test(navigator.userAgent) && !window.MSStream && /AppleWebKit/.test(navigator.userAgent);
+}
+
+$(document).ready(function() {
+  if (isMobileSafari()) {
+      $('#compatibility-notice').show();
+  }
+});
