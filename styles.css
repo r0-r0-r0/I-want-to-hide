@@ -75,7 +75,7 @@ body {
 
 #unmute-image {
     position: absolute;
-            top: 40px; /* Adjust the distance from the top */
+            top: 30px; /* Adjust the distance from the top */
             right: 20px; /* Adjust the distance from the right */
             width: 50px; /* Adjust the size of the image */
             height: 50px;
@@ -84,7 +84,7 @@ body {
 
 #unmute-image {
     position: absolute;
-    top: 40px; /* Adjust the distance from the top */
+    top: 30px; /* Adjust the distance from the top */
     right: 20px; /* Adjust the distance from the right */
     width: 50px; /* Adjust the size of the image */
     height: 50px;
