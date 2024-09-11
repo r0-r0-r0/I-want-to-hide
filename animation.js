@@ -5,7 +5,7 @@ var gl = canvas.getContext('webgl');
 
 var mouse = { x: 0, y: 0 };
 
-var numMetaballs = 6;
+var numMetaballs = 8;
 var metaballs = [];
 
 for (var i = 0; i < numMetaballs; i++) {
@@ -15,7 +15,7 @@ for (var i = 0; i < numMetaballs; i++) {
         y: Math.random() * (height - 2 * radius) + radius,
         vx: (Math.random() - 0.5) * 3,
         vy: (Math.random() - 0.5) * 3,
-        r: radius * 3
+        r: radius * 2
     });
 }
 
@@ -51,7 +51,7 @@ void main() {
 
     // Whitish-pink color effect without blue
     if (sum >= 0.99) {
-        gl_FragColor = vec4(mix(vec3(x / WIDTH, y / HEIGHT, 0.0), vec3(0, 0.8, 0.9), max(1.0, 0.7 - (sum - 0.3) * 0.1)), 0.3);
+        gl_FragColor = vec4(mix(vec3(x / WIDTH, y / HEIGHT, 0.0), vec3(1, 0.8, 0.9), max(1.0, 0.0 - (sum - 0.1) * 0.8)), 0);
         return;
     }
 
