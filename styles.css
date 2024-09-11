@@ -1,22 +1,24 @@
 body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     background-color: #f0f0f0;
 }
 
-.blurred-text {
-    font-size: 24px;
-    font-weight: bold;
+.text-container {
+    position: relative;
+    overflow: hidden;
+}
+
+#blurred-text {
+    font-size: 2rem;
     color: #000;
-    filter: blur(8px);
-    transition: filter 0.3s ease;
-    cursor: pointer;
-    padding: 20px;
-    border: 2px solid #000;
-    background-color: #fff;
-    border-radius: 8px;
     text-align: center;
+    filter: blur(8px);
+    transition: filter 0.1s ease-out;
+    white-space: pre-wrap;
 }
