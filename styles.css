@@ -17,8 +17,6 @@
 .content {
     position:fixed;
     z-index: 1; /* Ensure content is above the canvas */
-
-    
 }
 
 
@@ -41,10 +39,22 @@ body {
     margin: 3vw;
     margin-top: 5vw;
     background-color: #ffffff;
-    overflow:hidden;
+    overflow: hidden;
 
     animation: fadeIn 2s forwards;
 }
+
+
+@media (min-width: 800px) {
+    body {
+        font-size: 9vh;
+        line-height: 9vh;
+    }
+}
+
+
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
