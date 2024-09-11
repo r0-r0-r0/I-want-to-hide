@@ -6,30 +6,34 @@ body {
     font-family: "bodoni-moda-variable", sans-serif;
     font-variation-settings: "opsz" 11, "wght" 300;
     font-style: italic;
+    font-size: 7vw;
+    color: #514747;
+
     display: block;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 2vw;
     background-color: #f08383;
+
 }
 
 
 .text-container {
     max-width: 100%; /* Ensure the container does not exceed the screen width */
-    padding: 1rem; /* Add some padding for better readability */
     box-sizing: border-box; 
     position: relative;
+    white-space: inherit;
+    padding-inline-end: 3vw;
+    overflow-wrap: break-word;
 }
 
 .word {
     white-space: 3vh;
-    font-size: 10vw;
-    color: #514747;
     -webkit-filter: blur(2vw); /* For Safari */
     filter: blur(2vw);
-    transition: -webkit-filter 1s ease; /* For Safari */
-    transition: filter 3s ease;
+    transition: -webkit-filter 10s ease; /* For Safari */
+    transition: filter 10s ease;
 
     
 }
@@ -37,18 +41,16 @@ body {
 .word:hover {
     
     filter: blur(0px);
-    transition: filter 0.3s ease;
+    transition: -webkit-filter 0.5s ease; /* For Safari */
+    transition: filter 0.5s ease;
+    
 }
 
 
 #interactive-text {
-    display: block;
-    white-space: pre-wrap; /* Preserve whitespace and line breaks */
-    overflow-wrap: break-word;
     -webkit-user-drag: none; /* Prevents dragging on WebKit-based browsers like Safari */
     -webkit-user-select: none; /* Prevents text selection on WebKit-based browsers like Safari */
     -moz-user-select: none; /* Prevents text selection on Firefox */
     -ms-user-select: none; /* Prevents text selection on Internet Explorer/Edge */
     user-select: none; /* Standard syntax for preventing text selection */
-    padding-inline-end: 3vw;
 }
