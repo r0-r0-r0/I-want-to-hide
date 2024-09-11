@@ -6,13 +6,12 @@ body {
     font-family: "bodoni-moda-variable", sans-serif;
     font-variation-settings: "opsz" 11, "wght" 300;
     font-style: italic;
-   
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 3vw;
-    background-color: #f0f0f0;
+    margin: 2vw;
+    background-color: #f08383;
 }
 
 
@@ -25,10 +24,10 @@ body {
 
 .word {
     white-space: 3vh;
-    font-size: 5rem;
-    color: #333;
-    -webkit-filter: blur(5px); /* For Safari */
-    filter: blur(5px);
+    font-size: 10vw;
+    color: #514747;
+    -webkit-filter: blur(2vw); /* For Safari */
+    filter: blur(2vw);
     transition: -webkit-filter 1s ease; /* For Safari */
     transition: filter 3s ease;
 
@@ -51,5 +50,5 @@ body {
     -moz-user-select: none; /* Prevents text selection on Firefox */
     -ms-user-select: none; /* Prevents text selection on Internet Explorer/Edge */
     user-select: none; /* Standard syntax for preventing text selection */
-    line-height: 1.5;
+    padding-inline-end: 3vw;
 }
