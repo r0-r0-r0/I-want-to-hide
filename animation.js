@@ -5,11 +5,11 @@ var gl = canvas.getContext('webgl');
 
 var mouse = { x: 0, y: 0 };
 
-var numMetaballs = 8;
+var numMetaballs = 20;
 var metaballs = [];
 
 for (var i = 0; i < numMetaballs; i++) {
-    var radius = Math.random() * 60 + 10;
+    var radius = Math.random() * 20+ 10;
     metaballs.push({
         x: Math.random() * (width - 2 * radius) + radius,
         y: Math.random() * (height - 2 * radius) + radius,
