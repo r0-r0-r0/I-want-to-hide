@@ -17,8 +17,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #ff89ca;
-
+            background-color: #ffffff;
             font-family: "Handjet", sans-serif;
             font-optical-sizing: auto;
             font-weight: 700;
@@ -26,35 +25,103 @@
             font-size: 13vw;
             color: #000000;
             overflow: hidden; /* Prevent scrollbars */
+            transition: background-color 0.5s ease; /* Smooth transition for background color */
         }
 
         .touch {
+            transform: translateY(-2vh);
+            animation: blurAnimation 3s infinite; /* Blur animation */
             filter: blur(2vw); /* Initial blur */
-            transition: filter 2s ease; /* Smooth transition for blur effect */
+            transition: filter 0.3s ease, opacity 0.5s ease, color 0.5s ease; /* Smooth transition for blur, fade-out, and color */
             cursor: pointer;
         }
 
+        @keyframes blurAnimation {
+            0% {
+                filter: blur(0.1vw);
+            }
+            50% {
+                filter: blur(3vw); /* Max blur amount */
+            }
+            100% {
+                filter: blur(0.1vw);
+            }
+        }
+
         .touch.unblur {
-            filter: blur(0); /* Remove blur */
+            filter: blur(0); /* Remove blur on interaction */
+        }
+
+        /* Fade-out effect */
+        .fade-out {
+            opacity: 0;
+            color: #f47ea5; /* Change color on fade-out */
+        }
+
+        /* Ensure the fade-out effect is smooth */
+        .fade-out-transition {
+            transition: opacity 3s ease, color 3s ease;
+        }
+
+        a {
+        color: black;
+        text-decoration: none;
+        }
+
+
+        footer {
+            position: absolute;
+            font-weight: 300;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 1em;
+            color: hsl(0, 0%, 0%);
+            font-size: 3vw;
         }
     </style>
 </head>
 <body>
 
-    <div class="touch" id="touch">touch</div>
+    <a href="alltheshameinme.html" id="touch-link">
+        <div class="touch fade-out-transition" id="touch">touch</div>
+    </a>
+
+    <footer>
+        <b>Shame, baby!</b> <br>
+        &copy; 2024 Ayoon Ro. All rights reserved.
+    </footer>
 
     <script>
         const touchElement = document.getElementById('touch');
+        const touchLink = document.getElementById('touch-link');
+        const bodyElement = document.body; // Reference to the body element
 
-        function toggleBlur(event) {
-            touchElement.classList.toggle('unblur');
+        function removeBlur() {
+            touchElement.classList.add('unblur');
+        }
+
+        function addBlur() {
+            touchElement.classList.remove('unblur');
+        }
+
+        function fadeOutAndRedirect(event) {
+            event.preventDefault(); // Prevent the default link behavior
+            touchElement.classList.add('fade-out'); // Add fade-out effect
+            bodyElement.style.backgroundColor = '#f47ea5'; // Change background color
+            setTimeout(() => {
+                window.location.href = touchLink.href; // Redirect after fade-out
+            }, 1500); // Match the fade-out duration
         }
 
         // Handle hover and touch interactions
-        touchElement.addEventListener('mouseover', toggleBlur);
-        touchElement.addEventListener('mouseout', toggleBlur);
-        touchElement.addEventListener('touchstart', toggleBlur);
-        touchElement.addEventListener('touchend', toggleBlur);
+        touchElement.addEventListener('mouseover', removeBlur);
+        touchElement.addEventListener('mouseout', addBlur);
+        touchElement.addEventListener('touchstart', removeBlur);
+        touchElement.addEventListener('touchend', addBlur);
+
+        // Handle link click with fade-out effect
+        touchLink.addEventListener('click', fadeOutAndRedirect);
     </script>
 
 </body>
