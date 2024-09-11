@@ -10,6 +10,7 @@
     z-index: -1; /* Ensure the canvas is behind other content */
     display: block; /* Remove any extra spacing below the canvas */
     filter: blur(3vw);
+    background-color: #ffffff;
 }
 
 /* Styling for main content */
