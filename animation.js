@@ -9,7 +9,7 @@ var numMetaballs = 20;
 var metaballs = [];
 
 for (var i = 0; i < numMetaballs; i++) {
-    var radius = Math.random() * 20+ 10;
+    var radius = Math.random() * 10+ 6;
     metaballs.push({
         x: Math.random() * (width - 2 * radius) + radius,
         y: Math.random() * (height - 2 * radius) + radius,
